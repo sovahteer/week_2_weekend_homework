@@ -20,8 +20,9 @@ def test_check_out
 assert_equal(0, @room1.guest_count)
 end
 
-def test_add_songs
-
+def test_make_playlist
+  @room1.make_playlist(Song.new("Clint Eastwood", "Gorillaz"))
+  assert_equal(1, @room1.song_count)
 end
 
 end

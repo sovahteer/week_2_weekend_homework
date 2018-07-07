@@ -19,8 +19,12 @@ class Room
   def check_out(guest)
     return @guests.delete(guest.name)
   end
-  
-  def add_songs
 
+  def make_playlist(song)
+    @songs[song.name] = song
+  end
+
+  def song_count
+    return @songs.length
   end
 end
