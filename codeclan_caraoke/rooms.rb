@@ -3,19 +3,23 @@ require_relative 'songs'
 
 class Room
 
-  def initialize(guests, songs)
-    @guests = []
-    @songs = []
+  def initialize()
+    @guests = {}
+    @songs = {}
   end
 
-  def check_in
-
+  def check_in(guest)
+    @guests[guest.name] = guest
   end
 
-  def check_out
-
+  def guest_count()
+    return @guests.length
   end
 
+  def check_out(guest)
+    return @guests.delete(guest.name)
+  end
+  
   def add_songs
 
   end

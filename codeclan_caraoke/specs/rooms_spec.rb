@@ -11,11 +11,13 @@ def setup()
 end
 
 def test_check_in
-
+  @room1.check_in(Guest.new("Martin", 28, "Clint Eastwood"))
+  assert_equal(1, @room1.guest_count)
 end
 
 def test_check_out
-
+@room1.check_out(Guest.new("Martin", 28, "Clint Eastwood"))
+assert_equal(0, @room1.guest_count)
 end
 
 def test_add_songs
