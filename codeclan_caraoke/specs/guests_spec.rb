@@ -6,9 +6,9 @@ class TestGuest < MiniTest::Test
 
   def setup()
     @guests = {
-      "Martin" => Guest.new("Martin", 28, "Clint Eastwood"),
-      "Dorah" => Guest.new("Dorah", 33, "Africa"),
-      "Catherine" => Guest.new("Catherine", 24, "Somebody Told Me")
+      "Martin" => Guest.new("Martin", 28, 100, "Clint Eastwood"),
+      "Dorah" => Guest.new("Dorah", 33, 50, "Africa"),
+      "Catherine" => Guest.new("Catherine", 24, 25, "Somebody Told Me")
     }
   end
 
@@ -18,6 +18,10 @@ class TestGuest < MiniTest::Test
 
   def test_age
     assert_equal(33, @guests["Dorah"].age)
+  end
+
+  def test_wallet
+    assert_equal(100, @guests["Martin"].wallet)
   end
 
   def test_favourite_song

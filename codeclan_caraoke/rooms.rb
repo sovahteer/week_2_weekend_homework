@@ -3,12 +3,16 @@ require_relative 'songs'
 
 class Room
 
-  def initialize()
+  def initialize(capacity)
     @guests = {}
     @songs = {}
+    @capacity = capacity
   end
 
   def check_in(guest)
+    if guest_count == @capacity
+      return "Room is full"
+    end
     @guests[guest.name] = guest
   end
 
